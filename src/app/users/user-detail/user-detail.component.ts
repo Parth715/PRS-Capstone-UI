@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-detail',
@@ -13,3 +14,4 @@ export class UserDetailComponent implements OnInit {
   }
 
 }
+
