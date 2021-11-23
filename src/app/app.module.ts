@@ -23,6 +23,7 @@ import { VendorCreateComponent } from './vendors/vendor-create/vendor-create.com
 import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
+import { ReviewComponent } from './review/review.component';
 
 
 @NgModule({
@@ -47,6 +48,8 @@ import { VendorListComponent } from './vendors/vendor-list/vendor-list.component
     VendorDetailComponent,
     VendorEditComponent,
     VendorListComponent,
+    ReviewComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
