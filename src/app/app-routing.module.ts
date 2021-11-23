@@ -9,6 +9,7 @@ import { RequestCreateComponent } from './requests/request-create/request-create
 import { RequestDetailComponent } from './requests/request-detail/request-detail.component';
 import { RequestEditComponent } from './requests/request-edit/request-edit.component';
 import { RequestListComponent } from './requests/request-list/request-list.component';
+import { ReviewComponent } from './review/review.component';
 import { UserCreateComponent } from './users/user-create/user-create.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path: "vendordetail", component: VendorDetailComponent},
   {path: "vendoredit", component: VendorEditComponent},
   {path: "vendorcreate", component: VendorCreateComponent},
+  {path: "review", component: ReviewComponent},
   {path: "**", component: UserListComponent},
 ];
 

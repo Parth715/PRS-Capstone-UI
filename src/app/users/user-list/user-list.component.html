@@ -1,14 +1,16 @@
-<h1>User List</h1>
-
-<table class="table table-striped">
+<app-menu></app-menu>
+<h3 align="center">User List</h3>
+<p><a routerLink="usercreate">Create</a> | Search</p>
+<table class="table table-hover" align="center">
     <tr>
-        <td>Id</td>
-        <td>Username</td>
-        <td>Name</td>
-        <td>Phone</td>
-        <td>Email</td>
-        <td>Reviewer</td>
-        <td>Admin</td>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Reviewer</th>
+        <th>Admin</th>
+        <th>Actions</th>
     </tr>
     <tr *ngFor="let user of users">
         <td>{{user.id}}</td>
@@ -18,6 +20,8 @@
         <td>{{user.email}}</td>
         <td>{{user.isReviewer}}</td>
         <td>{{user.isAdmin}}</td>
+        <td><a routerLink="/userdetail">Details</a> | <a routerLink="/useredit">Edit</a></td>
     </tr>
 </table>
+
 
