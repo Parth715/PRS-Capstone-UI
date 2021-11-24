@@ -16,7 +16,6 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
     this.usersrv.list().subscribe({
       next: res => {
-        console.debug("Users:", res)
         this.users = res;
       },
       error: err => {

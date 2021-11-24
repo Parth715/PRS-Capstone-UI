@@ -1,1 +1,53 @@
 <app-menu></app-menu>
+<a routerLink="/user">Back to User list</a>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>
+            <input [(ngModel)]="user.id" type="text" size=2pt readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td>
+            <input [(ngModel)]="user.username" type="text" size=20pt>
+        </td>
+    </tr>
+    <tr>
+        <td>First Name</td>
+        <td>
+            <input [(ngModel)]="user.firstname"  type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td>
+            <input [(ngModel)]="user.lastname"  type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>phone</td>
+        <td>
+            <input [(ngModel)]="user.phone" type="text" size=15pt>
+        </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>
+            <input [(ngModel)]="user.email" type="text"size=35pt>
+        </td>
+    </tr>
+    <tr>
+        <td>Reviewer</td>
+        <td>
+            <input [(ngModel)]="user.isReviewer" type="checkbox">
+        </td>
+    </tr>
+    <tr>
+        <td>Admin</td>
+        <td>
+            <input [(ngModel)]="user.isAdmin" type="checkbox">
+        </td>
+    </tr>
+</table>
+<button type="button" class="btn btn-primary" onclick="save()" routerLink="/user">Save</button>

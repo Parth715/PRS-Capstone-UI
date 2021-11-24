@@ -21,11 +21,11 @@ import { VendorListComponent } from './vendors/vendor-list/vendor-list.component
 
 
 const routes: Routes = [
-  {path: "", redirectTo: "", pathMatch: "full"},
+  {path: "", redirectTo: "/login", pathMatch: "full"},
   {path: "login", component: LoginComponent},
   {path: "userlist", component: UserListComponent},
-  {path: "userdetail", component: UserDetailComponent},
-  {path: "useredit", component: UserEditComponent},
+  {path: "userdetail/:id", component: UserDetailComponent},
+  {path: "useredit/:id", component: UserEditComponent},
   {path: "usercreate", component: UserCreateComponent},
   {path: "productlist", component: ProductListComponent},
   {path: "productdetail", component: ProductDetailComponent},

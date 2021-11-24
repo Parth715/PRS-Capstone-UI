@@ -1,46 +1,54 @@
 <app-menu></app-menu>
+<a routerLink="/user">Back to User list</a>
 <table>
     <tr>
         <td>Id</td>
         <td>
-            <input id="id" type="text" disabled size=2pt>
+            <input [(ngModel)]="user.id" type="text" disabled size=2pt>
         </td>
     </tr>
     <tr>
         <td>Username</td>
         <td>
-            <input id="username" type="text" disabled size=20pt>
+            <input [(ngModel)]="user.username" type="text" disabled size=20pt>
         </td>
     </tr>
     <tr>
-        <td>Name</td>
+        <td>First Name</td>
         <td>
-            <input id="name" type="text" disabled>
+            <input [(ngModel)]="user.firstname"  type="text" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td>
+            <input [(ngModel)]="user.lastname"  type="text" disabled>
         </td>
     </tr>
     <tr>
         <td>phone</td>
         <td>
-            <input id="phone" type="text" disabled size=15pt>
+            <input [(ngModel)]="user.phone" type="text" disabled size=15pt>
         </td>
     </tr>
     <tr>
         <td>Email</td>
         <td>
-            <input id="email" type="text" disabled size=35pt>
+            <input [(ngModel)]="user.email" type="text" disabled size=35pt>
         </td>
     </tr>
     <tr>
         <td>Reviewer</td>
         <td>
-            <input id="reviewer" type="checkbox" disabled>
+            <input [(ngModel)]="user.isReviewer" type="checkbox" disabled>
         </td>
     </tr>
     <tr>
         <td>Admin</td>
         <td>
-            <input id="admin" type="checkbox" disabled>
+            <input [(ngModel)]="user.isAdmin" type="checkbox" disabled>
         </td>
     </tr>
 </table>
-<button type="button" class="btn btn-danger" onclick="del()">Delete</button>
+<button type="button" class="btn btn-danger" onclick="del()" routerLink="/user">Delete</button>
+<button type="button" class="btn btn-warning" routerLink="/useredit/{{user.id}}">Edit</button>

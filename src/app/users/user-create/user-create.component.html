@@ -1,1 +1,59 @@
 <app-menu></app-menu>
+<a routerLink="/user">Back to User list</a>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>
+            <input id="id" value = 0 type="text" disabled size=2pt>
+        </td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td>
+            <input id="username" type="text" size=20pt>
+        </td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>
+            <input id="password" type="text" size=20pt>
+        </td>
+    </tr>
+    <tr>
+        <td>First Name</td>
+        <td>
+            <input id="firstname"  type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td>
+            <input id="lastname"  type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>phone</td>
+        <td>
+            <input id="phone" type="text" size=15pt>
+        </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>
+            <input id="email" type="text" size=35pt>
+        </td>
+    </tr>
+    <tr>
+        <td>Reviewer</td>
+        <td>
+            <input id="isReviewer" type="checkbox">
+        </td>
+    </tr>
+    <tr>
+        <td>Admin</td>
+        <td>
+            <input id="isAdmin" type="checkbox">
+        </td>
+    </tr>
+</table>
+<button type="button" class="btn btn-primary" onclick="add()" routerLink="/user">Save</button>

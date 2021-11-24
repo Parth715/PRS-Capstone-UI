@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-create',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCreateComponent implements OnInit {
 
-  constructor() { }
+  postId:any;
+  user!: User;
+  constructor(private usersrv: UserService) { }
 
   ngOnInit(): void {
+  }
+  add(): void{
+    
+    this.user = {
+      id: 10,
+      username: "abc123",
+      password: "123abc",
+      firstname: "abc",
+      lastname: "123", 
+      email: "", 
+      phone:"", 
+      isAdmin: false, 
+      isReviewer: false
+    }
+    this.usersrv.Insert(this.user)
   }
 
 }
