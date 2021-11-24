@@ -26,17 +26,7 @@ export class UserEditComponent implements OnInit {
     })
   }
   save(): void{
-    let id = this.route.snapshot.params["id"]
-    this.usersrv.GetByPk(id).subscribe({
-      next: res => {
-        console.log(res)
-        this.user=res;
-      },
-      error: err => {
-        console.log(err);
-      }
-    })
-    this.usersrv.Update(this.user)
+    console.log("button works")
   }
 
 }

@@ -9,26 +9,11 @@ import { UserService } from '../user.service';
 })
 export class UserCreateComponent implements OnInit {
 
-  postId:any;
-  user!: User;
+    user!: User;
   constructor(private usersrv: UserService) { }
 
   ngOnInit(): void {
   }
-  add(): void{
-    
-    this.user = {
-      id: 10,
-      username: "abc123",
-      password: "123abc",
-      firstname: "abc",
-      lastname: "123", 
-      email: "", 
-      phone:"", 
-      isAdmin: false, 
-      isReviewer: false
-    }
-    this.usersrv.Insert(this.user)
-  }
 
+  add(): void {}
 }

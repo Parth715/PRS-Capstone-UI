@@ -17,13 +17,16 @@ export class UserService {
   GetByPk(id: string):Observable<User>{
     return this.httpsrv.get(`${this.baseurl}/${id}`) as Observable<User>
   }
-  Delete(id: string): void{
-    this.httpsrv.delete(`${this.baseurl}/${id}`)
+  Login(username: string, password: string): void{
+    
   }
-  Insert(user: User): void{
-    this.httpsrv.post(`${this.baseurl}`, `${user}`)
+  Insert(user: User): Observable<User>{
+    return this.httpsrv.post(`${this.baseurl}`, `${user}`) as Observable<User>
   }
   Update(user: User): void{
     this.httpsrv.put(`${this.baseurl}`, `${user}`)
+  }
+  Delete(id: string): void{
+    this.httpsrv.delete(`${this.baseurl}/${id}`)
   }
 }
