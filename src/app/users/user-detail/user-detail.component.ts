@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../user';
 import { UserService } from '../user.service';
 
@@ -26,9 +26,11 @@ export class UserDetailComponent implements OnInit {
     })
   }
   del(): void{
-    let user = this.route.snapshot.params["id"]
-    this.usersrv.Delete(user)
-    
+    let userid = this.route.snapshot.params["id"]
+    this.usersrv.Delete(userid).subscribe({
+      next: res => console.log("Successfully deleted"),
+      error: err => console.log(err)
+    })
   }
 
 }
