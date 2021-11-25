@@ -1,4 +1,4 @@
-export class Vendors {
+export class Vendor {
     id: number;
     code: string;
     name: string;

@@ -1,1 +1,32 @@
 <app-menu></app-menu>
+<a routerLink="/vendorlist">Back to vendor list</a>
+<table>
+    <tr>
+        <td><input [(ngModel)] = "vendor.id" value=0 readonly></td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)] = "vendor.code" placeholder="Enter Code"></td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)] = "vendor.name" placeholder="Enter Name"></td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)] = "vendor.address" placeholder="Enter Address"></td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)] = "vendor.city" placeholder="Enter City"></td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)] = "vendor.state" placeholder="Enter State"></td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)] = "vendor.zip" placeholder="Enter Zip"></td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)] = "vendor.phone" placeholder="Enter Phone Number"></td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)] = "vendor.email" placeholder="Enter Email"></td>
+    </tr>
+</table>
+<button type="button" class="btn btn-primary" (click)="add()" routerLink="/vendorlist">Save</button>
