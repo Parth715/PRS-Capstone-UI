@@ -26,7 +26,10 @@ export class UserEditComponent implements OnInit {
     })
   }
   save(): void{
-    console.log("button works")
+    this.usersrv.Update(this.user).subscribe({
+      next: res => console.log("Changed successfully"),
+      error: err => console.log(err)
+    })
   }
 
 }
