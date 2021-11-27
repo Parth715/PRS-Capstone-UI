@@ -1,1 +1,42 @@
 <app-menu></app-menu>
+<a routerLink="/productlist">Back to Product list</a>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>
+            <input [(ngModel)]="product.id" type=number readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>PartNbr</td>
+        <td>
+            <input [(ngModel)]="product.partNbr" type=number readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>
+            <input [(ngModel)]="product.name" type="text" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>
+            <input [(ngModel)]="product.price" type=number readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>Unit</td>
+        <td>
+            <input [(ngModel)]="product.unit" type=text readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>
+            <input [(ngModel)]="product.id" type=number readonly>
+        </td>
+    </tr>
+</table>
+<button type = button class = "btn btn-danger" routerLink="/productlist">Delete</button>
+<button type = button class = "btn btn-warning" routerLink="/productedit/{{product.id}}">Edit</button>

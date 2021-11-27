@@ -25,7 +25,7 @@ export class UserService {
     return this.httpmethod.post(`${this.baseurl}`, `${user}`) as Observable<User>
   }
   Update(user: User): Observable<User>{
-    return this.httpmethod.put(`${this.baseurl}`, `${user}`) as Observable<User>
+    return this.httpmethod.put(this.baseurl, user) as Observable<User>
   }
   Delete(id: string): Observable<User>{
     return this.httpmethod.delete(`${this.baseurl}/${id}`) as Observable<User>

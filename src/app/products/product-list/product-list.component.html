@@ -1,17 +1,27 @@
 <app-menu></app-menu>
-<h3></h3>
+<h3>Product List</h3>
+<a routerLink="/productcreate">Create</a>
 <table class="table table-hover">
     <thead>
         <tr>
             <th>Id</th>
-            <th>Code</th>
+            <th>PartNbr</th>
             <th>Name</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip</th>
-            <th>Phone</th>
-            <th>Email</th>
+            <th>Price</th>
+            <th>Unit</th>
+            <th>Vendor</th>
+            <th>Actions</th>
         </tr>
     </thead>
+    <tbody *ngFor="let product of products">
+        <tr>
+            <td>{{product.id}}</td>
+            <td>{{product.partNbr}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.unit}}</td>
+            <td>{{product.vendorId}}</td>
+            <td><a routerLink="/productdetail/{{product.id}}">Details</a> | <a routerLink="/productedit/{{product.id}}">Edit</a></td>
+        </tr>
+    </tbody>
 </table>
