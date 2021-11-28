@@ -19,4 +19,7 @@ export class ProductService {
   Update(product: Product): Observable<Product>{
     return this.httpmeth.put(this.baseurl, product) as Observable<Product>
   }
+  Insert(product: Product): Observable<Product>{
+    return this.httpmeth.post(this.baseurl, product) as Observable<Product>
+  }
 }

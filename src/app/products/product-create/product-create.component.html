@@ -1,1 +1,41 @@
 <app-menu></app-menu>
+<a routerLink="/productlist">Back to Product list</a>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>
+            <input [(ngModel)]="product.id" type = number value = 0 readonly>
+        </td>
+    </tr>
+    <tr>
+        <td>PartNbr</td>
+        <td>
+            <input [(ngModel)]="product.id" type = number>
+        </td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>
+            <input [(ngModel)]="product.id" type = text>
+        </td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>
+            <input [(ngModel)]="product.id" type = number>
+        </td>
+    </tr>
+    <tr>
+        <td>Unit</td>
+        <td>
+            <input [(ngModel)]="product.id" type = text>
+        </td>
+    </tr>
+    <tr>
+        <td>Vendor</td>
+        <td>
+            <input [(ngModel)]="product.id" type = text>
+        </td>
+    </tr>
+</table>
+<button type="button" class="btn btn-primary" (click)="create()"routerLink="/productlist">Save</button>

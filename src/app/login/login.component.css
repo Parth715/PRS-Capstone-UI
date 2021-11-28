@@ -1,0 +1,40 @@
+h3 {
+    text-align: center;
+    padding-bottom:7%;
+    padding-top: 4%
+}
+table { 
+    border: 1px gray;
+    width:20%;
+    border: 2px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-collapse: collapse; 
+}
+button {
+    position: relative;
+    margin-left: 43%;
+    margin-bottom: 75px;
+    
+}
+th {
+    text-align: center;
+    padding-top: 3em;
+}
+td {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 7em;
+    padding-right: 7em;
+    text-align: center;
+}
+
+.data {
+    padding-bottom: 25px;
+}
+.red {
+    color: red;
+    font-weight: bolder;
+}

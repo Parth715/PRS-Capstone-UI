@@ -20,5 +20,11 @@ export class ProductEditComponent implements OnInit {
       error: err => console.log(err)
     })
   }
+  save(): void{
+    this.productsrv.Update(this.product).subscribe({
+      next: res => this.product = res,
+      error: err => console.log(err)
+    })
+  }
 
 }

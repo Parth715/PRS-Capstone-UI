@@ -1,2 +1,25 @@
-<p>login works!</p>
 <app-menu></app-menu>
+<h3>Welcome to the Capstone PRS</h3>
+<table>
+    <tr>
+        <th>Login</th>
+    </tr>
+    <tr>
+        <td>
+            <input class="rounded" [(ngModel)]="username" type="text" placeholder="Username">
+        </td>
+    </tr>
+    <tr>
+        <td class="data">
+            <input class="rounded" [(ngModel)]="password" type="password" placeholder="Password">
+        </td>
+    </tr>
+    <tr>
+        <td class="red">
+            {{login}}
+        </td>
+    </tr>
+    <tr>
+        <button type ="button" class="btn btn-primary">Login</button>
+    </tr>
+</table>
