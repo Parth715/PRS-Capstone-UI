@@ -1,0 +1,12 @@
+table {
+    margin-top: 10%;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+select {
+    width: 150px;
+}
+td, tr {
+    text-align: center;
+}

@@ -1,1 +1,53 @@
 <app-menu></app-menu>
+<a routerLink="/requestlist">Back to Request list</a>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>
+            <input [(ngModel)]="request.id" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>
+            <input [(ngModel)]="request.description">
+        </td>
+    </tr>
+    <tr>
+        <td>Justification</td>
+        <td>
+            <input [(ngModel)]="request.justification">
+        </td>
+    </tr>
+    <tr>
+        <td>Rejection Reason</td>
+        <td>
+            <input [(ngModel)]="request.rejectionReason">
+        </td>
+    </tr>
+    <tr>
+        <td>Delivery Mode</td>
+        <td>
+            <input [(ngModel)]="request.deliveryMode">
+        </td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>
+            <input [(ngModel)]="request.status">
+        </td>
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td>
+            <input [(ngModel)]="request.total">
+        </td>
+    </tr>
+    <tr>
+        <td>User</td>
+        <td>
+            <input [(ngModel)]="request.user.firstname">
+        </td>
+    </tr>
+</table>
+<button type="button" class="btn btn-primary" routerLink="/requestlist">Save</button>

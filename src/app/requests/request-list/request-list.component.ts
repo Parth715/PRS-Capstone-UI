@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RequestService } from '../request.service';
+import { Request } from '../request';
 @Component({
   selector: 'app-request-list',
   templateUrl: './request-list.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestListComponent implements OnInit {
 
-  constructor() { }
+  requests: Request[] = [] 
+  constructor(private requestsrv: RequestService) { }
 
   ngOnInit(): void {
+    this.requestsrv.list().subscribe({
+      next: res => this.requests = res,
+      error: err => console.log(err)
+    })
   }
 
 }

@@ -1,54 +1,61 @@
 <app-menu></app-menu>
-<a routerLink="/user">Back to User list</a>
+<button type="button" class="btn btn-secondary" routerLink="/userlist">User list</button>
 <table>
     <tr>
-        <td>Id</td>
+        <td colspan="2"><h3>User Details</h3></td>
+    </tr>
+    <tr>
+        <td>Id:</td>
         <td>
             <input [(ngModel)]="user.id" type="text" disabled size=2pt>
         </td>
     </tr>
     <tr>
-        <td>Username</td>
+        <td>Username:</td>
         <td>
-            <input [(ngModel)]="user.username" type="text" disabled size=20pt>
+            <input [(ngModel)]="user.username" type="text" readonly size=20pt>
         </td>
     </tr>
     <tr>
-        <td>First Name</td>
+        <td>First Name:</td>
         <td>
-            <input [(ngModel)]="user.firstname"  type="text" disabled>
+            <input [(ngModel)]="user.firstname"  type="text" readonly>
         </td>
     </tr>
     <tr>
-        <td>Last Name</td>
+        <td>Last Name:</td>
         <td>
-            <input [(ngModel)]="user.lastname"  type="text" disabled>
+            <input [(ngModel)]="user.lastname"  type="text" readonly>
         </td>
     </tr>
     <tr>
-        <td>phone</td>
+        <td>Phone:</td>
         <td>
-            <input [(ngModel)]="user.phone" type="text" disabled size=15pt>
+            <input [(ngModel)]="user.phone" type="text" readonly size=15pt>
         </td>
     </tr>
     <tr>
-        <td>Email</td>
+        <td>Email:</td>
         <td>
-            <input [(ngModel)]="user.email" type="text" disabled size=35pt>
+            <input [(ngModel)]="user.email" type="text" readonly size=35pt>
         </td>
     </tr>
     <tr>
-        <td>Reviewer</td>
+        <td>Reviewer:</td>
         <td>
             <input [(ngModel)]="user.isReviewer" type="checkbox" disabled>
         </td>
     </tr>
     <tr>
-        <td>Admin</td>
+        <td>Admin:</td>
         <td>
             <input [(ngModel)]="user.isAdmin" type="checkbox" disabled>
         </td>
     </tr>
+    <tr inline=true>
+        <td colspan="2">
+            <button inline=true type="button" class="btn btn-danger" (click)="del()" routerLink="/userlist">Delete</button>
+            <button inline=true type="button" class="btn btn-warning" routerLink="/useredit/{{user.id}}">Edit</button>
+        </td>
+    </tr>
 </table>
-<button type="button" class="btn btn-danger" (click)="del()" routerLink="/userlist">Delete</button>
-<button type="button" class="btn btn-warning" routerLink="/useredit/{{user.id}}">Edit</button>

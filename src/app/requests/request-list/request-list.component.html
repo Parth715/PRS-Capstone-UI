@@ -1,1 +1,31 @@
 <app-menu></app-menu>
+<h3>Request List</h3>
+<p><a routerLink="/requestcreate">Create</a></p>
+<table class = "table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Justification</th>
+            <th>Rejection Reason</th>
+            <th>Delivery Mode</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests">
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.justification}}</td>
+            <td>{{request.rejectionReason}}</td>
+            <td>{{request.deliveryMode}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+            <td>{{request.user.firstname}}</td>
+            <td><a routerLink="/requestdetail/{{request.id}}">Details</a> | <a routerLink="/requestedit/{{request.id}}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>

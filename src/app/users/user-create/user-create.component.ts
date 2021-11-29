@@ -9,17 +9,7 @@ import { UserService } from '../user.service';
 })
 export class UserCreateComponent implements OnInit {
 
-    user: User = {
-      id: 0,
-    username: "",
-    password: "",
-    firstname: "",
-    lastname: "",
-    phone: "",
-    email: "",
-    isReviewer: false,
-    isAdmin: false,
-    }
+    user: User = new User;
   constructor(private usersrv: UserService) { }
 
   ngOnInit(): void {

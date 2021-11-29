@@ -9,6 +9,7 @@ import { User } from './user';
 export class UserService {
 
   baseurl: string = "http://localhost:12345/api/users"
+  loggedinuser!: User
   constructor(private httpmethod: HttpClient) { }
 
   list(): Observable<User[]> {
@@ -17,9 +18,9 @@ export class UserService {
   GetByPk(id: string):Observable<User>{
     return this.httpmethod.get(`${this.baseurl}/${id}`) as Observable<User>
   }
-  Login(username: string, password: string): void{
-
-  }
+  //Login(username: string, password: string): Observable<User>{
+    //this.loggedinuser = this.httpmethod.get(`${this.baseurl}/${username}/${password}`) as Observable<User>
+    //return this.loggedinuser;}
   Insert(user: User): Observable<User>{
   
     return this.httpmethod.post(`${this.baseurl}`, `${user}`) as Observable<User>

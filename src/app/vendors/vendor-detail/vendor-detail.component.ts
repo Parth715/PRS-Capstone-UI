@@ -6,7 +6,7 @@ import { VendorService } from '../vendor.service';
 @Component({
   selector: 'app-vendor-detail',
   templateUrl: './vendor-detail.component.html',
-  styleUrls: ['./vendor-detail.component.css']
+  styleUrls: ['../../users/user-create/user-create.component.css']
 })
 export class VendorDetailComponent implements OnInit {
 

@@ -1,10 +1,15 @@
 <app-menu></app-menu>
-<a routerLink="/user">Back to User list</a>
+<button type="button" class="btn btn-secondary" routerLink="/userlist">User list</button>
 <table>
+    <tr>
+        <td  colspan="2">
+            <h3>Edit User</h3>
+        </td>
+    </tr>
     <tr>
         <td>Id</td>
         <td>
-            <input [(ngModel)]="user.id" type="text" size=2pt readonly>
+            <input [(ngModel)]="user.id" type="text" size=2pt disabled>
         </td>
     </tr>
     <tr>
@@ -55,5 +60,9 @@
             <input [(ngModel)]="user.isAdmin" type="checkbox">
         </td>
     </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" class="btn btn-primary" (click)="save()" routerLink="/userlist">Save</button>
+        </td>
+    </tr>
 </table>
-<button type="button" class="btn btn-primary" (click)="save()" routerLink="/userlist">Save</button>
