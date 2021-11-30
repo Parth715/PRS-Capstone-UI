@@ -7,9 +7,9 @@ import { Requestline } from '../requests/requestline';
 @Component({
   selector: 'app-requestlines',
   templateUrl: './requestlines.component.html',
-  styleUrls: ['../request-list/request-list.component.css']
+  styleUrls: ['../requests/request-list/request-list.component.css']
 })
-export class RequestDetailComponent implements OnInit {
+export class RequestlineComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private requestsrv: RequestService ) { }
 

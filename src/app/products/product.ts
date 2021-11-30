@@ -6,6 +6,7 @@ export class Product {
     name: string = "";
     price: number = 0;
     unit: string = "";
+    photopath: string = "";
     vendorId: number = 0;
     vendor!: Vendor
 

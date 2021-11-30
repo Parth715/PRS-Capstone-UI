@@ -24,6 +24,8 @@ import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.com
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
 import { ReviewComponent } from './review/review.component';
+import { RequestlineComponent } from './requestlines/requestlines.component';
+import { RequestlinesEditComponent } from './requestlines/requestlines-edit/requestlines-edit.component';
 
 
 @NgModule({
@@ -44,12 +46,14 @@ import { ReviewComponent } from './review/review.component';
     RequestDetailComponent,
     RequestEditComponent,
     RequestListComponent,
+    RequestlineComponent,
     VendorCreateComponent,
     VendorDetailComponent,
     VendorEditComponent,
     VendorListComponent,
     ReviewComponent,
-    ReviewComponent
+    RequestlinesEditComponent,
+  
     
   ],
   imports: [

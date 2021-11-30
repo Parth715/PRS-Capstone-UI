@@ -22,7 +22,7 @@ export class RequestCreateComponent implements OnInit {
   }
   Create(): void {
     this.requestsrv.Insert(this.request).subscribe({
-      next: res => console.log("Created"),
+      next: res => console.log(res),
       error: err => console.log("Creation failed")
     })
   }

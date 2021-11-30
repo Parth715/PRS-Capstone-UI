@@ -26,7 +26,8 @@ export class UserEditComponent implements OnInit {
     })
   }
   save(): void{
-    this.usersrv.Update(this.user).subscribe({
+    let id = this.route.snapshot.params["id"]
+    this.usersrv.Update(this.user, id).subscribe({
       next: res => console.log("Changed successfully"),
       error: err => console.log(err)
     })

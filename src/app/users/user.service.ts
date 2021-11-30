@@ -23,10 +23,10 @@ export class UserService {
     //return this.loggedinuser;}
   Insert(user: User): Observable<User>{
   
-    return this.httpmethod.post(`${this.baseurl}`, `${user}`) as Observable<User>
+    return this.httpmethod.post(this.baseurl, user) as Observable<User>
   }
-  Update(user: User): Observable<User>{
-    return this.httpmethod.put(this.baseurl, user) as Observable<User>
+  Update(user: User, id:string): Observable<User>{
+    return this.httpmethod.put(`${this.baseurl}/${id}`, user) as Observable<User>
   }
   Delete(id: string): Observable<User>{
     return this.httpmethod.delete(`${this.baseurl}/${id}`) as Observable<User>

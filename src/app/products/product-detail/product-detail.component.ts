@@ -20,5 +20,12 @@ export class ProductDetailComponent implements OnInit {
       error: err => console.log(err)
     })
   }
+  delete():void{
+    let productid = this.route.snapshot.params["id"];
+    this.productsrv.Delete(productid).subscribe({
+      next: res => console.log("Deleted"),
+      error: err => console.log(err)
+    })
+  }
 
 }

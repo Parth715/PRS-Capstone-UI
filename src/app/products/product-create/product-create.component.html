@@ -7,39 +7,53 @@
         </td>
     </tr>
     <tr>
-        <td>Id:</td>
+        <td>
+            Id:
+        </td>
         <td>
             <input [(ngModel)]="product.id" type=number value=0 disabled>
         </td>
     </tr>
     <tr>
-        <td>PartNbr:</td>
+        <td>
+            PartNbr:
+        </td>
         <td>
             <input [(ngModel)]="product.partNbr" type=number>
         </td>
     </tr>
     <tr>
-        <td>Name:</td>
+        <td>
+            Name:
+        </td>
         <td>
             <input [(ngModel)]="product.name" type=text>
         </td>
     </tr>
     <tr>
-        <td>Price:</td>
+        <td>
+            Price:
+        </td>
         <td>
             <input [(ngModel)]="product.price" type=number>
         </td>
     </tr>
     <tr>
-        <td>Unit:</td>
+        <td>
+            Unit:
+        </td>
         <td>
             <input [(ngModel)]="product.unit" type=text>
         </td>
     </tr>
     <tr>
-        <td>Vendor:</td>
         <td>
-            <input [(ngModel)]="product.vendorId" type=text>
+            Vendor:
+        </td>
+        <td>
+            <select [ngModel]="product.vendorId">
+                <option *ngFor="let vendor of vendors" value={{vendor.id}}>{{vendor.name}}</option>
+            </select>
         </td>
     </tr>
     <tr>

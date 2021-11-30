@@ -25,13 +25,6 @@
         </td>
     </tr>
     <tr>
-        <td>
-            <select [(ngModel)]="users">
-                <option *ngFor="let user of users" [value]="user.id">{{user.firstname}}</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
         <button type="button" class="btn btn-primary" (clicked)="Create()" routerLink="/requestlist">Save</button>
     </tr>
 </table>

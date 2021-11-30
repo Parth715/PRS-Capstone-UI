@@ -19,8 +19,8 @@ export class RequestService {
   GetByPk(requestid: string): Observable<Request>{
     return this.httpmeth.get(`${this.baseurl}/${requestid}`) as Observable<Request>
   }
-  Update(request: Request): Observable<Request>{
-    return this.httpmeth.put(this.baseurl, request) as Observable<Request>
+  Update(request: Request, id: string): Observable<Request>{
+    return this.httpmeth.put(`${this.baseurl}/${id}`, request) as Observable<Request>
   }
   Insert(request: Request): Observable<Request>{
     return this.httpmeth.post(this.baseurl, request) as Observable<Request>
@@ -30,5 +30,8 @@ export class RequestService {
   }
   GetRL(): Observable<Requestline[]>{
     return this.httpmeth.get("http://localhost:12345/api/requestlines") as Observable<Requestline[]>
+  }
+  Delete(id: string): Observable<Request>{
+    return this.httpmeth.delete(`${this.baseurl}/${id}`) as Observable<Request>
   }
 }

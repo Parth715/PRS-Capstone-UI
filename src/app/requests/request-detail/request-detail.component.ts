@@ -7,7 +7,7 @@ import { Requestline } from '../requestline';
 @Component({
   selector: 'app-request-detail',
   templateUrl: './request-detail.component.html',
-  styleUrls: ['../request-list/request-list.component.css']
+  styleUrls: ['../../users/user-create/user-create.component.css']
 })
 export class RequestDetailComponent implements OnInit {
 
@@ -22,8 +22,13 @@ export class RequestDetailComponent implements OnInit {
       next: res => this.request = res,
       error: err => console.log(err)
     })
-    
-
+  }
+  delete():void{
+    let id = this.route.snapshot.params["id"]
+    this.requestsrv.Delete(id).subscribe({
+      next: res => console.log("deleted"),
+      error: err => console.log(err)
+    })
   }
 
 }

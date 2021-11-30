@@ -28,7 +28,11 @@
     </tr>
     <tr>
         <td>Vendor</td>
-        <td><input [(ngModel)]="product.vendorId" type="text"></td>
+        <td>
+            <select [ngModel]="product.vendorId">
+                <option *ngFor="let vendor of vendors" value={{vendor.id}}>{{vendor.name}}</option>
+            </select>
+        </td>
     </tr>
     <tr>
         <td colspan="2">

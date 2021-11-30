@@ -44,7 +44,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <button type = button class = "btn btn-danger" routerLink="/productlist">Delete</button>
+            <button type = button class = "btn btn-danger" (click)="delete()" routerLink="/productlist">Delete</button>
             <button type = button class = "btn btn-warning" routerLink="/productedit/{{product.id}}">Edit</button>
         </td>
     </tr>
