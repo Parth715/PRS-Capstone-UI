@@ -1,15 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/products/product';
+import { RequestService } from 'src/app/requests/request.service';
+import { Requestline } from 'src/app/requests/requestline';
 
 @Component({
   selector: 'app-requestlines-edit',
   templateUrl: './requestlines-edit.component.html',
-  styleUrls: ['./requestlines-edit.component.css']
+  styleUrls: ['../../users/user-create/user-create.component.css']
 })
 export class RequestlinesEditComponent implements OnInit {
 
-  constructor() { }
+  products: Product[] = [];
+  id = "";
+  RL!: Requestline;
+  constructor(private route:ActivatedRoute, private requestsrv: RequestService) { }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.params["id"];
+    this.requestsrv.GetByPkRL(id).subscribe({
+      next: res => {
+        this.RL = res
+        id = this.RL.id
+      }
+    })
+    this.requestsrv.GetProd().subscribe({
+      next: res => this.products = res,
+      error: err => console.log(err)
+    })
   }
-
+  save(): void{
+    let id = this.route.snapshot.params["id"];
+    this.requestsrv.UpdateRL(this.RL, id).subscribe({
+      next: res => console.log("updated"),
+      error: err => console.log(err)
+    })
+  }
 }

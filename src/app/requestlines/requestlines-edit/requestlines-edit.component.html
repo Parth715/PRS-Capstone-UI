@@ -1,1 +1,35 @@
-<p>requestlines-edit works!</p>
+<app-menu></app-menu>
+<button type="button" class="btn btn-secondary" routerLink="/requestlines/{{RL.requestId}}">Request</button>
+<table>
+    <tr>
+        <td colspan="2">
+            <h3>Edit Requestline</h3>
+        </td>
+    </tr>
+    <tr>
+        <td>Id:</td>
+        <td>
+            <input [(ngModel)]="RL.id" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>Product:</td>
+        <td>
+            <select [ngModel]="RL.productId">
+                <option *ngFor="let p of products" value="p.id">{{p.name}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Quantity:</td>
+        <td>
+            <input [(ngModel)]="RL.quantity">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" class="btn btn-warning" routerLink="/requestlines/{{RL.requestId}}">Cancel</button>
+            <button type="buton" class="btn btn-primary" routerLink="/requestlines/{{RL.requestId}}" (click)="save()">Save</button>
+        </td>
+    </tr>
+</table>

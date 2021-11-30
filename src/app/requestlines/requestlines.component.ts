@@ -22,8 +22,13 @@ export class RequestlineComponent implements OnInit {
       next: res => this.request = res,
       error: err => console.log(err)
     })
-    
-
+  }
+  deleteRL(): void{
+    let id = this.route.snapshot.params["id"]
+    this.requestsrv.Delete(id).subscribe({
+      next: res => console.log("deleted"),
+      error: err => console.log(err)
+    })
   }
 
 }

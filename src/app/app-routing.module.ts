@@ -19,6 +19,8 @@ import { VendorCreateComponent } from './vendors/vendor-create/vendor-create.com
 import { VendorDetailComponent } from './vendors/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
+import { RequestlinesEditComponent } from './requestlines/requestlines-edit/requestlines-edit.component';
+import { RequestlinesCreateComponent } from './requestlines/requestlines-create/requestlines-create.component';
 
 
 const routes: Routes = [
@@ -37,11 +39,13 @@ const routes: Routes = [
   {path: "requestedit/:id", component: RequestEditComponent},
   {path: "requestcreate", component: RequestCreateComponent},
   {path: "requestlines/:id", component: RequestlineComponent},
+  {path: "requestlinesedit/:id", component: RequestlinesEditComponent},
+  {path: "requestlinescreate", component: RequestlinesCreateComponent},
   {path: "vendorlist", component: VendorListComponent},
   {path: "vendordetail/:id", component: VendorDetailComponent},
   {path: "vendoredit/:id", component: VendorEditComponent},
   {path: "vendorcreate", component: VendorCreateComponent},
-  {path: "review", component: ReviewComponent},
+  {path: "review/:id", component: ReviewComponent},
   {path: "**", component: UserListComponent},
 ];
 
