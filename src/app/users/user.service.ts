@@ -18,9 +18,9 @@ export class UserService {
   GetByPk(id: string):Observable<User>{
     return this.httpmethod.get(`${this.baseurl}/${id}`) as Observable<User>
   }
-  //Login(username: string, password: string): Observable<User>{
-    //this.loggedinuser = this.httpmethod.get(`${this.baseurl}/${username}/${password}`) as Observable<User>
-    //return this.loggedinuser;}
+  Login(username: string, password: string): Observable<User>{
+     return this.httpmethod.get(`${this.baseurl}/${username}/${password}`) as Observable<User>
+    }
   Insert(user: User): Observable<User>{
   
     return this.httpmethod.post(this.baseurl, user) as Observable<User>

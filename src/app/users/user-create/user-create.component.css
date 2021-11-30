@@ -10,3 +10,9 @@ select {
 td, tr {
     text-align: center;
 }
+.left {
+    margin-left: 1%;
+}
+.right {
+    margin-left: 90%;
+}
