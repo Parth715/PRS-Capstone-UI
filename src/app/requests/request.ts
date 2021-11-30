@@ -1,4 +1,5 @@
 import { User } from "../users/user";
+import { Requestline } from "./requestline";
 
 export class Request {
     id: number = 0;
@@ -10,6 +11,5 @@ export class Request {
     total: number = 0;
     userId: number = 0;
     user!: User;
-    constructor(){
-    }
+    requestLines!: Requestline[];
 }

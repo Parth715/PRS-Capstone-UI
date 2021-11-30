@@ -1,9 +1,14 @@
 <app-menu></app-menu>
-<a routerLink="/productlist">Back to Product list</a>
+<button type="button" class="btn btn-secondary" routerLink="/productlist">Product list</button>
 <table>
     <tr>
+        <td colspan="2">
+            <h3>Edit Product</h3>
+        </td>
+    </tr>
+    <tr>
         <td>Id</td>
-        <td><input [(ngModel)]="product.id" type="number" readonly></td>
+        <td><input [(ngModel)]="product.id" type="number" disabled></td>
     </tr>
     <tr>
         <td>PartNbr</td>
@@ -25,5 +30,9 @@
         <td>Vendor</td>
         <td><input [(ngModel)]="product.vendorId" type="text"></td>
     </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" class="btn btn-primary" (click)="save()" routerLink="/productlist">Save</button>
+        </td>
+    </tr>
 </table>
-<button type="button" class="btn btn-primary" (click)="save()" routerLink="/productlist">Save</button>

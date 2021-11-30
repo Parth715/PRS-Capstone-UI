@@ -50,6 +50,7 @@ import { ReviewComponent } from './review/review.component';
     VendorListComponent,
     ReviewComponent,
     ReviewComponent
+    
   ],
   imports: [
     BrowserModule,

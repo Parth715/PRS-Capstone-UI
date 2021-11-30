@@ -1,41 +1,50 @@
 <app-menu></app-menu>
-<a routerLink="/vendorlist">Back to Vendor list</a>
+<button type="button" class="btn btn-secondary" routerLink="/vendorlist">Vendor list</button>
 <table>
     <tr>
-        <td>Id</td>
-        <td><input [(ngModel)]="vendor.id" size=2 type="number" readonly></td>
+        <td colspan="2">
+            <h3>Edit Vendor</h3>
+        </td>
     </tr>
     <tr>
-        <td>Code</td>
+        <td>Id:</td>
+        <td><input [(ngModel)]="vendor.id" size=2 type="number" disabled></td>
+    </tr>
+    <tr>
+        <td>Code:</td>
         <td><input [(ngModel)]="vendor.code" size=4 type="text"></td>
     </tr>
     <tr>
-        <td>Name</td>
+        <td>Name:</td>
         <td><input [(ngModel)]="vendor.name" size=12 type="text"></td>
     </tr>
     <tr>
-        <td>Address</td>
+        <td>Address:</td>
         <td><input [(ngModel)]="vendor.address" size=20 type="text"></td>
     </tr>
     <tr>
-        <td>City</td>
+        <td>City:</td>
         <td><input [(ngModel)]="vendor.city" size=8 type="text"></td>
     </tr>
     <tr>
-        <td>State</td>
+        <td>State:</td>
         <td><input [(ngModel)]="vendor.state" size=3 type="text"></td>
     </tr>
     <tr>
-        <td>Zip</td>
+        <td>Zip:</td>
         <td><input [(ngModel)]="vendor.zip" size=5 type="text"></td>
     </tr>
     <tr>
-        <td>Phone</td>
+        <td>Phone:</td>
         <td><input [(ngModel)]="vendor.phone" size=10 type="text"></td>
     </tr>
     <tr>
-        <td>Email</td>
+        <td>Email:</td>
         <td><input [(ngModel)]="vendor.email" size=22 type="text"></td>
     </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" class="btn btn-primary" (click)="save()" routerLink="/vendorlist">Save</button>
+        </td>
+    </tr>
 </table>
-<button type="button" class="btn btn-primary" (click)="save()" routerLink="/vendorlist">Save</button>

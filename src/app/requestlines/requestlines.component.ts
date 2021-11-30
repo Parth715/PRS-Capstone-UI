@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RequestService } from '../request.service';
-import { Request } from '../request';
-import { Requestline } from '../requestline';
+import { RequestService } from '../requests/request.service';
+import { Request } from '../requests/request';
+import { Requestline } from '../requests/requestline';
 
 @Component({
-  selector: 'app-request-detail',
-  templateUrl: './request-detail.component.html',
+  selector: 'app-requestlines',
+  templateUrl: './requestlines.component.html',
   styleUrls: ['../request-list/request-list.component.css']
 })
 export class RequestDetailComponent implements OnInit {

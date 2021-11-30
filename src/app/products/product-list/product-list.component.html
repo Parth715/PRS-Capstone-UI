@@ -13,8 +13,8 @@
             <th>Actions</th>
         </tr>
     </thead>
-    <tbody *ngFor="let product of products">
-        <tr>
+    <tbody>
+        <tr *ngFor="let product of products">
             <td>{{product.id}}</td>
             <td>{{product.partNbr}}</td>
             <td>{{product.name}}</td>

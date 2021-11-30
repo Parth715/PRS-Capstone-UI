@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 import { User } from '../users/user';
 import { Request } from './request';
+import { Requestline } from './requestline';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,8 @@ export class RequestService {
   }
   GetUser(): Observable<User[]>{
   return this.httpmeth.get("http://localhost:12345/api/users") as Observable<User[]>
+  }
+  GetRL(): Observable<Requestline[]>{
+    return this.httpmeth.get("http://localhost:12345/api/requestlines") as Observable<Requestline[]>
   }
 }

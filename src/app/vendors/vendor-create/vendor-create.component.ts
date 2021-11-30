@@ -9,7 +9,7 @@ import { VendorService } from '../vendor.service';
 })
 export class VendorCreateComponent implements OnInit {
 
-  vendor!: Vendor
+  vendor: Vendor = new Vendor;
   constructor(private vendorsrv: VendorService) { }
 
   ngOnInit(): void {

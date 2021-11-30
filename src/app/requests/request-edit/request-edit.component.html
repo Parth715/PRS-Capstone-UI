@@ -1,6 +1,11 @@
 <app-menu></app-menu>
-<a routerLink="/requestlist">Back to Request list</a>
+<button type="button" class="btn btn-secondary" routerLink="/requestlist">Request list</button>
 <table>
+    <tr>
+        <td colspan="2">
+            <h3>Edit Request</h3>
+        </td>
+    </tr>
     <tr>
         <td>Id</td>
         <td>
@@ -49,5 +54,9 @@
             <input [(ngModel)]="request.user.firstname">
         </td>
     </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" class="btn btn-primary" routerLink="/requestlist">Save</button>
+        </td>
+    </tr>
 </table>
-<button type="button" class="btn btn-primary" routerLink="/requestlist">Save</button>
