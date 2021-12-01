@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../requests/request.service';
-import { Requestline } from '../requests/requestline';
 import { Request } from '../requests/request';
-import { LoginComponent } from '../login/login.component';
 import { UserService } from '../users/user.service';
 import { User } from '../users/user';
 

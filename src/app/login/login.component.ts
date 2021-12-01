@@ -22,8 +22,9 @@ export class LoginComponent implements OnInit {
   verify(): void {
     this.usersrv.Login(this.username, this.password).subscribe({
       next: res => {
-        this.loggedinuser = res
-        this.router.navigate(["/requestlist"])},
+        this.usersrv.loggedinuser = res
+        this.router.navigate(["/requestlist"])
+        },
       error: err => {console.log(err) 
       this.login = "Login/Password do not match"}
     })
