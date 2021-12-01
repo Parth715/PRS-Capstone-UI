@@ -1,1 +1,30 @@
-<p>review1 works!</p>
+<button type="button" class="btn btn-secondary" routerLink="/review">Review</button>
+<h3>Review</h3>
+<table class="table table">
+    <thead>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Rejection Reason</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.rejectionReason}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+            <td>{{request.user.firstname}}</td>
+        </tr>
+        <h5>Requestlines</h5>
+            <tr>
+                <td class="bold">Id</td>
+                <td class="bold">Product</td>
+                <td class="bold">Quantity</td>
+                <td class="bold">Price</td>
+                <td class="bold">Subtotal</td>
+            </tr>
+    </tbody>
+</table>

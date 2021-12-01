@@ -18,7 +18,9 @@ export class RequestCreateComponent implements OnInit {
   constructor(private login: UserService, private requestsrv: RequestService, private router: Router) { }
 
   ngOnInit(): void {
-    this.request.user = this.user;
+    if(this.user == null){
+      this.router.navigate(["/login"])
+    }
   }
   
   Create(): void {
