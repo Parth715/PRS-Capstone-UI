@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vendor } from '../vendor';
 import { VendorService } from '../vendor.service';
 
@@ -10,13 +11,15 @@ import { VendorService } from '../vendor.service';
 export class VendorCreateComponent implements OnInit {
 
   vendor: Vendor = new Vendor;
-  constructor(private vendorsrv: VendorService) { }
+  constructor(private vendorsrv: VendorService, private router: Router) { }
 
   ngOnInit(): void {
   }
   add():void{
     this.vendorsrv.Insert(this.vendor).subscribe({
-      next: res => console.log("Created"),
+      next: res => {
+        console.log("Created")
+        this.router.navigate(["/vendorlist"])},
       error: err => console.log(err)
     })
   }

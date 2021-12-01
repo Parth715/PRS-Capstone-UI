@@ -1,1 +1,28 @@
-<p>requestlines-create works!</p>
+<app-menu></app-menu>
+<button type="button" class="btn btn-secondary" routerLink="/requestlines/{{request.id}}">Request</button>
+<table>
+    <tr>
+        <td colspan="2">
+            <h3>
+                Create Requestline
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Product: <select [ngModel]="RL.productId">
+                <option *ngFor="let p of products" value="p.id">{{p.name}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Quantity: <input [(ngModel)]="RL.quantity">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" class="btn btn-primary" (click)="save()">Save</button>
+        </td>
+    </tr>
+</table>

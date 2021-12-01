@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from '../request.service';
 import { Request } from '../request';
 import { Requestline } from '../requestline';
@@ -11,7 +11,7 @@ import { Requestline } from '../requestline';
 })
 export class RequestDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private requestsrv: RequestService ) { }
+  constructor(private route: ActivatedRoute, private requestsrv: RequestService, private router: Router ) { }
 
   requestlines!: Requestline[]
 
@@ -26,7 +26,7 @@ export class RequestDetailComponent implements OnInit {
   delete():void{
     let id = this.route.snapshot.params["id"]
     this.requestsrv.Delete(id).subscribe({
-      next: res => console.log("deleted"),
+      next: res => this.router.navigate(["/requestlist"]),
       error: err => console.log(err)
     })
   }

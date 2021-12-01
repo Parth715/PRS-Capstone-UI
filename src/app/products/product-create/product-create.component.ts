@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vendor } from 'src/app/vendors/vendor';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
@@ -12,7 +13,7 @@ export class ProductCreateComponent implements OnInit {
 
   vendors: Vendor[] = [];
   product: Product = new Product
-  constructor(private productsrv: ProductService) { }
+  constructor(private productsrv: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.productsrv.GetVen().subscribe({
@@ -21,8 +22,11 @@ export class ProductCreateComponent implements OnInit {
     })
   }
   create(): void{
+    this.product.vendorId = +this.product.vendorId;
     this.productsrv.Insert(this.product).subscribe({
-      next: res => this.product = res,
+      next: res => {
+        this.product = res
+        this.router.navigate(["/productlist"])},
       error: err => console.log(err)
     })
   }

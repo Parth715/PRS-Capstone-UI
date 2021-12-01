@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from '../requests/request.service';
 import { Request } from '../requests/request';
 import { Requestline } from '../requests/requestline';
@@ -11,7 +11,7 @@ import { Requestline } from '../requests/requestline';
 })
 export class RequestlineComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private requestsrv: RequestService ) { }
+  constructor(private route: ActivatedRoute, private requestsrv: RequestService, private router: Router ) { }
 
   requestlines!: Requestline[]
 
@@ -23,11 +23,16 @@ export class RequestlineComponent implements OnInit {
       error: err => console.log(err)
     })
   }
-  deleteRL(): void{
+  deleteRL(): void {
     let id = this.route.snapshot.params["id"]
     this.requestsrv.Delete(id).subscribe({
-      next: res => console.log("deleted"),
+      next: res => this.router.navigate(["/requestline/{{request.id}}"]),
       error: err => console.log(err)
+    })
+  }
+  review(): void {
+    this.requestsrv.Review(this.request).subscribe({
+      next: res => this.router.navigate(["/requestlines/{{request.id}}"])
     })
   }
 

@@ -16,3 +16,6 @@ td, tr {
 .right {
     margin-left: 90%;
 }
+a.kinda-link:hover {
+    cursor: pointer;
+}

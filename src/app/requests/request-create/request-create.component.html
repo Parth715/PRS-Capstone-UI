@@ -25,6 +25,11 @@
         </td>
     </tr>
     <tr>
-        <button type="button" class="btn btn-primary" (clicked)="Create()" routerLink="/requestlist">Save</button>
+        <td>
+            <input [(ngModel)]="user.firstname" disabled>
+        </td>
+    </tr>
+    <tr>
+        <button type="button" class="btn btn-primary" (clicked)="Create()">Save</button>
     </tr>
 </table>

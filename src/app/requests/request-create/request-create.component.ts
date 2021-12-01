@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../request.service';
 import { Request } from '../request'
 import { User } from '../../users/user'
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/users/user.service';
 
 @Component({
   selector: 'app-request-create',
@@ -10,19 +12,16 @@ import { User } from '../../users/user'
 })
 export class RequestCreateComponent implements OnInit {
 
-  users: User[] = []
+  user: User = this.login.loggedinuser
   request: Request = new Request();
-  constructor(private requestsrv: RequestService) { }
+  
+  constructor(private login: UserService, private requestsrv: RequestService, private router: Router) { }
 
   ngOnInit(): void {
-    this.requestsrv.GetUser().subscribe({
-      next: res => this.users = res,
-      error: err => console.log(err)
-    })
   }
   Create(): void {
     this.requestsrv.Insert(this.request).subscribe({
-      next: res => console.log(res),
+      next: res => this.router.navigate(["/requestlist"]),
       error: err => console.log("Creation failed")
     })
   }

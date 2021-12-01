@@ -17,8 +17,11 @@ export class RequestService {
   list(): Observable<Request[]>{
     return this.httpmeth.get(this.baseurl) as Observable<Request[]>
   }
-  GetUser(): Observable<User[]>{
-  return this.httpmeth.get("http://localhost:12345/api/users") as Observable<User[]>
+  listNotMine(user: string): Observable<Request[]>{
+    return this.httpmeth.get(`${this.baseurl}/reviews/${user}`) as Observable<Request[]>
+  }
+  GetUser(): Observable<User>{
+  return this.httpmeth.get("http://localhost:12345/api/users") as Observable<User>
   }
   GetRL(): Observable<Requestline[]>{
     return this.httpmeth.get("http://localhost:12345/api/requestlines") as Observable<Requestline[]>
@@ -41,10 +44,17 @@ export class RequestService {
   Insert(request: Request): Observable<Request>{
     return this.httpmeth.post(this.baseurl, request) as Observable<Request>
   }
+  InsertRL(RL: Requestline): Observable<Requestline>{
+    return this.httpmeth.post(`http://localhost:12345/api/requestlines`, RL) as Observable<Requestline>
+  }
   Delete(id: string): Observable<Request>{
     return this.httpmeth.delete(`${this.baseurl}/${id}`) as Observable<Request>
   }
   DeleteRL(id: string): Observable<Request>{
     return this.httpmeth.delete(`http://localhost:12345/api/requestlines/${id}`) as Observable<Request>
+  }
+  Review(request: Request): Observable<Request>{
+    let review="review"
+    return this.httpmeth.put(`${this.baseurl}/${review}`, request) as Observable<Request>
   }
 }

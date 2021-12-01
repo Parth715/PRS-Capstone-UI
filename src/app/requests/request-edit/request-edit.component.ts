@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from '../request.service';
 import { Request } from '../request'
 import { User } from 'src/app/users/user';
@@ -11,9 +11,9 @@ import { User } from 'src/app/users/user';
 })
 export class RequestEditComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private requestsrv: RequestService) { }
+  constructor(private route: ActivatedRoute, private requestsrv: RequestService, private router: Router) { }
 
-  users: User[] = []
+  users: User = new User
   request!: Request;
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];
@@ -29,7 +29,7 @@ export class RequestEditComponent implements OnInit {
   save(): void{
     let id = this.route.snapshot.params["id"];
     this.requestsrv.Update(this.request, id).subscribe({
-      next: res => console.log("Changed"),
+      next: res => this.router.navigate(["/requestlist"]),
       error: err => console.log(err)
     })
   }

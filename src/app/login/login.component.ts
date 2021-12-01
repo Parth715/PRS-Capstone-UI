@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../users/user';
 import { UserService } from '../users/user.service';
 
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   password: string = "";
   login: string = "";
   loggedinuser!: User;
-  constructor(private usersrv: UserService) { }
+  constructor(private router:Router,private usersrv: UserService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.usersrv.Login(this.username, this.password).subscribe({
       next: res => {
         this.loggedinuser = res
-        this.login = "found the user"},
+        this.router.navigate(["/requestlist"])},
       error: err => {console.log(err) 
       this.login = "Login/Password do not match"}
     })

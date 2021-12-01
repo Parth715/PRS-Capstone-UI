@@ -23,12 +23,12 @@
             <td>{{request.status}}</td>
             <td>{{request.total}}</td>
             <td>{{request.user.firstname}}</td>
-            <td><a routerLink="/requestlist">Review</a></td>
+            <td><a class="kinda-link" (click)="review()">Review</a></td>
         </tr>
     </tbody>
 </table>
 <h3>Request Details</h3>
-<p><a routerLink="/requestlinescreate">Add</a></p>
+<p><a routerLink="/requestlinescreate/{{request.id}}">Add</a></p>
 <table *ngIf="request" class="table table-hover">
     <thead>
         <tr>
@@ -47,7 +47,7 @@
             <td>{{rl.quantity}}</td>
             <td>{{rl.product.price}}</td>
             <td>{{rl.product.price*rl.quantity}}</td>
-            <td><a routerLink="/requestlinesedit/{{rl.id}}">Edit</a> | <a routerLink="" (click)="deleteRL()">Delete</a></td>
+            <td><a routerLink="/requestlinesedit/{{rl.id}}/{{request.id}}">Edit</a> | <a class="kinda-link" (click)="deleteRL()">Delete</a></td>
         </tr>
     </tbody>
 </table>

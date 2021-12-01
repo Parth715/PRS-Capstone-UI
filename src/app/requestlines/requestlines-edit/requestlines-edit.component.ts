@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/products/product';
 import { RequestService } from 'src/app/requests/request.service';
 import { Requestline } from 'src/app/requests/requestline';
@@ -14,7 +14,7 @@ export class RequestlinesEditComponent implements OnInit {
   products: Product[] = [];
   id = "";
   RL!: Requestline;
-  constructor(private route:ActivatedRoute, private requestsrv: RequestService) { }
+  constructor(private route:ActivatedRoute, private requestsrv: RequestService, private router: Router) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];
@@ -31,8 +31,9 @@ export class RequestlinesEditComponent implements OnInit {
   }
   save(): void{
     let id = this.route.snapshot.params["id"];
+    let requestid = this.route.snapshot.params["requestid"];
     this.requestsrv.UpdateRL(this.RL, id).subscribe({
-      next: res => console.log("updated"),
+      next: res => this.router.navigate([`/requestlines/${requestid}`]),
       error: err => console.log(err)
     })
   }

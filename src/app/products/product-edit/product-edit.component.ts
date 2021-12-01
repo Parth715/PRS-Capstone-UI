@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Vendor } from 'src/app/vendors/vendor';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
@@ -11,7 +11,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductEditComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private productsrv: ProductService) { }
+  constructor(private route: ActivatedRoute, private productsrv: ProductService, private router: Router) { }
 
   vendors: Vendor[]= []
   product!: Product;
@@ -22,14 +22,16 @@ export class ProductEditComponent implements OnInit {
       error: err => console.log(err)
     })
     this.productsrv.GetVen().subscribe({
-      next: res => this.vendors = res,
+      next: res => {
+        this.vendors = res
+        },
       error: err => console.log(err)
     })
   }
   save(): void{
     let productid = this.route.snapshot.params["id"];
     this.productsrv.Update(this.product, productid).subscribe({
-      next: res => console.log("changed"),
+      next: res => this.router.navigate(["/productlist"]),
       error: err => console.log(err)
     })
   }

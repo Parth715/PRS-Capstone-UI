@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Vendor } from '../vendor';
 import { VendorService } from '../vendor.service';
 
@@ -11,7 +11,7 @@ import { VendorService } from '../vendor.service';
 export class VendorEditComponent implements OnInit {
 
   vendor!: Vendor
-  constructor(private route: ActivatedRoute, private vendorsrv: VendorService) { }
+  constructor(private route: ActivatedRoute, private vendorsrv: VendorService, private router: Router) { }
 
   ngOnInit(): void {
     let vendorid = this.route.snapshot.params["id"]
@@ -23,7 +23,9 @@ export class VendorEditComponent implements OnInit {
 save(): void{
   let vendorid = this.route.snapshot.params["id"]
   this.vendorsrv.Update(this.vendor, vendorid).subscribe({
-    next: res => console.log("updated"),
+    next: res => {
+      console.log("updated")
+      this.router.navigate(["/vendorlist"])},
     error: err => console.log(err)
   })
 }
