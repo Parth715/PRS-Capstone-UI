@@ -32,8 +32,10 @@ export class RequestlineComponent implements OnInit {
   }
   review(): void {
     this.requestsrv.Review(this.request).subscribe({
-      next: res => this.router.navigate(["/requestlines/{{request.id}}"])
+      next: res => this.request = res,
+      error: err => console.log(err)
     })
+    this.router.navigate(["/requestlist"])
   }
 
 }

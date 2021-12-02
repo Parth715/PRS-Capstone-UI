@@ -26,8 +26,9 @@ export class RequestCreateComponent implements OnInit {
   Create(): void {
     this.request.userId = this.user.id
     this.requestsrv.Insert(this.request).subscribe({
-      next: res => this.router.navigate(["/requestlist"]),
+      next: res => console.log(res),
       error: err => console.log("Creation failed")
     })
+    this.router.navigate(["/requestlist"])
   }
 }

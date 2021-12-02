@@ -18,13 +18,35 @@
             <td>{{request.total}}</td>
             <td>{{request.user.firstname}}</td>
         </tr>
-        <h5>Requestlines</h5>
-            <tr>
-                <td class="bold">Id</td>
-                <td class="bold">Product</td>
-                <td class="bold">Quantity</td>
-                <td class="bold">Price</td>
-                <td class="bold">Subtotal</td>
-            </tr>
+        <tr>
+            <td colspan="6">
+                <h3>Requestlines</h3>
+            </td>
+        </tr>
+        <tr>
+            <td class="bold">Id</td>
+            <td class="bold">Product</td>
+            <td class="bold">Quantity</td>
+            <td class="bold">Price</td>
+            <td class="bold">Subtotal</td>
+        </tr>
+        <tr *ngFor="let RL of request.requestLines">
+            <td>{{RL.id}}</td>
+            <td>{{RL.product.name}}</td>
+            <td>{{RL.quantity}}</td>
+            <td>{{RL.product.price}}</td>
+            <td>{{RL.quantity * RL.product.price}}</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-danger" (click)="reject()">Reject</button>
+            </td>
+            <td id="reject" style="display: none;">
+                <input [(ngModel)]="request.rejectionReason">
+                <button type="button" class="btn btn-danger" (click)="verifyreject()">Verify Reject</button>
+            <td colspan="3">
+                <button type="button" class="btn btn-success" (click)="approve()">Approve</button>
+            </td>
+        </tr>
     </tbody>
 </table>

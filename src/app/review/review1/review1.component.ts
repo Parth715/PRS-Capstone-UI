@@ -12,7 +12,8 @@ export class Review1Component implements OnInit {
 
   constructor(private requestsrv: RequestService, private route: ActivatedRoute, private router: Router) { }
 
-  request!: Request
+  show = false
+  request: Request = new Request
   ngOnInit(): void {
     let requestid = this.route.snapshot.params["id"];
     this.requestsrv.GetByPk(requestid).subscribe({
@@ -20,5 +21,22 @@ export class Review1Component implements OnInit {
       error: err => console.log(err)
     })
   }
-
+  approve(): void {
+    this.requestsrv.APPROVE(this.request).subscribe({
+      next: res => console.log("status changed"),
+      error: err => console.log(err)
+    })
+    this.router.navigate(["/review"])
+  }
+  reject(): void{
+    let R:any = document.getElementById("reject");
+    R.style.display = "block";
+  }
+  verifyreject(): void {
+        this.requestsrv.REJECT(this.request).subscribe({
+          next: res => this.request = res,
+          error: err => console.log(err) 
+        })
+    this.router.navigate(["/review"])
+  }
 }

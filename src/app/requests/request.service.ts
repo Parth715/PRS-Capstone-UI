@@ -54,7 +54,12 @@ export class RequestService {
     return this.httpmeth.delete(`http://localhost:12345/api/requestlines/${id}`) as Observable<Request>
   }
   Review(request: Request): Observable<Request>{
-    let review="review"
-    return this.httpmeth.put(`${this.baseurl}/${review}`, request) as Observable<Request>
+    return this.httpmeth.put(`${this.baseurl}/review`, request) as Observable<Request>
+  }
+  REJECT(request: Request): Observable<Request> {
+    return this.httpmeth.put(`${this.baseurl}/reject`, request) as Observable<Request>
+  }
+  APPROVE(request:Request): Observable<Request> {
+    return this.httpmeth.put(`${this.baseurl}/approve`, request) as Observable<Request>
   }
 }
