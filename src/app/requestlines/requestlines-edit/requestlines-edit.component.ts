@@ -33,8 +33,9 @@ export class RequestlinesEditComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     let requestid = this.route.snapshot.params["requestid"];
     this.requestsrv.UpdateRL(this.RL, id).subscribe({
-      next: res => this.router.navigate([`/requestlines/${requestid}`]),
+      next: res => console.log("update the status to REVIEW after pressing the save button"),
       error: err => console.log(err)
     })
+    this.router.navigate([`/requestlines/${requestid}`])
   }
 }

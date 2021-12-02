@@ -47,7 +47,7 @@
             <td>{{rl.quantity}}</td>
             <td>{{rl.product.price}}</td>
             <td>{{rl.product.price*rl.quantity}}</td>
-            <td><a routerLink="/requestlinesedit/{{rl.id}}/{{request.id}}">Edit</a> | <a class="kinda-link" (click)="deleteRL()">Delete</a></td>
+            <td><a routerLink="/requestlinesedit/{{rl.id}}/{{request.id}}">Edit</a> | <button class="btn btn-link" (click)="deleteRL(rl.id)">Delete</button></td>
         </tr>
     </tbody>
 </table>

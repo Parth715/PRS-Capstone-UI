@@ -11,13 +11,13 @@
     <tr>
         <td>
             Product: <select [ngModel]="RL.productId">
-                <option *ngFor="let p of products" value="p.id">{{p.name}}</option>
+                <option *ngFor="let p of products" value="p.id" type="number">{{p.name}}</option>
             </select>
         </td>
     </tr>
     <tr>
         <td>
-            Quantity: <input [(ngModel)]="RL.quantity">
+            Quantity: <input [(ngModel)]="RL.quantity" type="number">
         </td>
     </tr>
     <tr>

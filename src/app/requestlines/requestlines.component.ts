@@ -23,12 +23,18 @@ export class RequestlineComponent implements OnInit {
       error: err => console.log(err)
     })
   }
-  deleteRL(): void {
-    let id = this.route.snapshot.params["id"]
-    this.requestsrv.Delete(id).subscribe({
-      next: res => this.router.navigate(["/requestline/{{request.id}}"]),
+  deleteRL(id: number): void {
+    let page = this.route.snapshot.params["id"]
+    let ids = id.toString()
+    this.requestsrv.DeleteRL(ids).subscribe({
+      next: res => console.log(res),
       error: err => console.log(err)
     })
+    this.requestsrv.Review(this.request).subscribe({
+      next: res => console.log(res),
+      error: err => console.log(err)
+    })
+    this.router.navigate(["/requestline/{{page}}"])
   }
   review(): void {
     this.requestsrv.Review(this.request).subscribe({
