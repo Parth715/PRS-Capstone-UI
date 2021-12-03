@@ -31,7 +31,9 @@ export class ProductEditComponent implements OnInit {
   save(): void{
     let productid = this.route.snapshot.params["id"];
     this.productsrv.Update(this.product, productid).subscribe({
-      next: res => this.router.navigate(["/productlist"]),
+      next: res => {
+        console.log(res);
+        this.router.navigate(["/productlist"])},
       error: err => console.log(err)
     })
   }

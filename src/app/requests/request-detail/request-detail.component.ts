@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from '../request.service';
 import { Request } from '../request';
 import { Requestline } from '../requestline';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-request-detail',
@@ -17,11 +18,7 @@ export class RequestDetailComponent implements OnInit {
 
   request!: Request
   ngOnInit(): void {
-    let id = this.route.snapshot.params["id"]
-    this.requestsrv.GetByPk(id).subscribe({
-      next: res => this.request = res,
-      error: err => console.log(err)
-    })
+    this.refresh();
   }
   delete():void{
     let id = this.route.snapshot.params["id"]
@@ -30,5 +27,12 @@ export class RequestDetailComponent implements OnInit {
       error: err => console.log(err)
     })
   }
-
+  refresh(): void {
+    let id = this.route.snapshot.params["id"]
+    this.requestsrv.GetByPk(id).subscribe({
+      next: res => {this.request = res
+      },
+      error: err => console.log(err)
+    })
+  }
 }

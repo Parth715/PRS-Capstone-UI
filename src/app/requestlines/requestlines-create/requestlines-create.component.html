@@ -10,8 +10,8 @@
     </tr>
     <tr>
         <td>
-            Product: <select [ngModel]="RL.productId">
-                <option *ngFor="let p of products" value="p.id" type="number">{{p.name}}</option>
+            Product: <select [(ngModel)]="RL.productId">
+                <option *ngFor="let p of products" value={{p.id}} type="number">{{p.name}}</option>
             </select>
         </td>
     </tr>

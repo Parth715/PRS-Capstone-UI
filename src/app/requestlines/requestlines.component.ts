@@ -14,34 +14,32 @@ export class RequestlineComponent implements OnInit {
   constructor(private route: ActivatedRoute, private requestsrv: RequestService, private router: Router ) { }
 
   requestlines!: Requestline[]
-
   request!: Request
   ngOnInit(): void {
-    let id = this.route.snapshot.params["id"]
-    this.requestsrv.GetByPk(id).subscribe({
-      next: res => this.request = res,
-      error: err => console.log(err)
-    })
+    this.refresh();
   }
   deleteRL(id: number): void {
     let page = this.route.snapshot.params["id"]
     let ids = id.toString()
     this.requestsrv.DeleteRL(ids).subscribe({
-      next: res => console.log(res),
+      next: res => {
+        console.log("deleted")
+        this.refresh();},
       error: err => console.log(err)
     })
-    this.requestsrv.Review(this.request).subscribe({
-      next: res => console.log(res),
-      error: err => console.log(err)
-    })
-    this.router.navigate(["/requestline/{{page}}"])
   }
   review(): void {
     this.requestsrv.Review(this.request).subscribe({
-      next: res => this.request = res,
+      next: res => this.router.navigate(["/requestlist"]),
       error: err => console.log(err)
     })
-    this.router.navigate(["/requestlist"])
   }
 
+  refresh(): void {
+    let id = this.route.snapshot.params["id"]
+    this.requestsrv.GetByPk(id).subscribe({
+      next: res => this.request = res,
+      error: err => console.log(err)
+    });
+  }
 }

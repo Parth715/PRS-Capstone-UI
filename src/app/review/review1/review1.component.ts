@@ -23,10 +23,9 @@ export class Review1Component implements OnInit {
   }
   approve(): void {
     this.requestsrv.APPROVE(this.request).subscribe({
-      next: res => console.log("status changed"),
+      next: res => this.router.navigate(["/review"]),
       error: err => console.log(err)
     })
-    this.router.navigate(["/review"])
   }
   reject(): void{
     let R:any = document.getElementById("reject");
@@ -34,9 +33,8 @@ export class Review1Component implements OnInit {
   }
   verifyreject(): void {
         this.requestsrv.REJECT(this.request).subscribe({
-          next: res => this.request = res,
+          next: res => this.router.navigate(["/review"]),
           error: err => console.log(err) 
         })
-    this.router.navigate(["/review"])
   }
 }
