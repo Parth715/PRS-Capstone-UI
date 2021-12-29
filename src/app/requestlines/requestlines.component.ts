@@ -13,7 +13,6 @@ export class RequestlineComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private requestsrv: RequestService, private router: Router ) { }
 
-  requestlines!: Requestline[]
   request!: Request
   ngOnInit(): void {
     this.refresh();
