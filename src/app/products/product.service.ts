@@ -27,6 +27,6 @@ export class ProductService {
     return this.httpmeth.delete(`${this.baseurl}/${id}`) as Observable<Product>
   }
   GetVen(): Observable<Vendor[]>{
-    return this.httpmeth.get("http://localhost:12345/api/vendors") as Observable<Vendor[]>
+    return this.httpmeth.get("http://parpate1.w32.wh-2.com/PRSB/api/vendors") as Observable<Vendor[]>
   }
 }
