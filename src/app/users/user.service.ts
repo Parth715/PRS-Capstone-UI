@@ -8,7 +8,7 @@ import { User } from './user';
 })
 export class UserService {
 
-  baseurl: string = "http://localhost:12345/api/users"
+  baseurl: string = "http://parpate1.w32.wh-2.com/PRSB/api/users"
   loggedinuser!: User
   constructor(private httpmethod: HttpClient) { }
 

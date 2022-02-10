@@ -11,7 +11,7 @@ import { Requestline } from './requestline';
 })
 export class RequestService {
 
-  baseurl = "http://localhost:12345/api/requests";
+  baseurl = "http://parpate1.w32.wh-2.com/PRSB/api/requests";
   constructor(private httpmeth: HttpClient) { }
   list(): Observable<Request[]>{
     return this.httpmeth.get(this.baseurl) as Observable<Request[]>

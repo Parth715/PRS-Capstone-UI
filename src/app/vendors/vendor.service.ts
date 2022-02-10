@@ -9,7 +9,7 @@ import { Vendor } from './vendor';
 })
 export class VendorService {
 
-  baseurl = "http://localhost:12345/api/vendors"
+  baseurl = "http://parpate1.w32.wh-2.com/PRSB/api/vendors"
   constructor(private route:ActivatedRoute, private httpmethod: HttpClient) { }
   list(): Observable<Vendor[]>{
     return this.httpmethod.get(this.baseurl) as Observable<Vendor[]>

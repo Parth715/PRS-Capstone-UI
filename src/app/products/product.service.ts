@@ -9,7 +9,7 @@ import { Product } from './product';
 })
 export class ProductService {
 
-  baseurl="http://localhost:12345/api/products"
+  baseurl="http://parpate1.w32.wh-2.com/PRSB/api/products"
   constructor(private httpmeth: HttpClient) { }
   list(): Observable<Product[]>{
   return this.httpmeth.get(this.baseurl) as Observable<Product[]>
