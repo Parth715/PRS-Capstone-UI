@@ -18,9 +18,7 @@ export class RequestlineComponent implements OnInit {
     this.refresh();
   }
   deleteRL(id: number): void {
-    let page = this.route.snapshot.params["id"]
-    let ids = id.toString()
-    this.requestsrv.DeleteRL(ids).subscribe({
+    this.requestsrv.DeleteRL(id).subscribe({
       next: res => {
         console.log("deleted")
         this.refresh();},

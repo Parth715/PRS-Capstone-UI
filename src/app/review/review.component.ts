@@ -20,7 +20,7 @@ export class ReviewComponent implements OnInit {
     if(this.user == null){
       this.router.navigate(["/login"])
     }
-    let id = this.user.id.toString()
+    let id = this.user.id;
     this.requestsrv.listNotMine(id).subscribe({
       next: res => this.requests = res,
       error: err => console.log(err)

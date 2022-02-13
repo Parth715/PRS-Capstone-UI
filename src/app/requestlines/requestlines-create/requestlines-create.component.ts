@@ -32,7 +32,14 @@ export class RequestlinesCreateComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     this.RL.requestId = +id
     this.requestsrv.InsertRL(this.RL).subscribe({
-      next: res => this.router.navigate([`/requestlines/${id}`]),   
+      next: res => {this.review();
+                    this.router.navigate([`/requestlines/${id}`])},   
+      error: err => console.log(err)
+    })
+  }
+  review(): void {
+    this.requestsrv.Review(this.request).subscribe({
+      next: res => this.router.navigate(["/requestlist"]),
       error: err => console.log(err)
     })
   }

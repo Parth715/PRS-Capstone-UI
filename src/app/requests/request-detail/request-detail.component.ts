@@ -21,7 +21,7 @@ export class RequestDetailComponent implements OnInit {
     this.refresh();
   }
   delete():void{
-    let id = this.route.snapshot.params["id"]
+    let id = +this.route.snapshot.params["id"]
     this.requestsrv.Delete(id).subscribe({
       next: res => this.router.navigate(["/requestlist"]),
       error: err => console.log(err)
